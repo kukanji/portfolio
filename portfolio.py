@@ -80,7 +80,7 @@ def get_data(html):
 # ラインにメッセージを送信
 def send_line(msg):
     # アクセストークンを以下に設定
-    acc_token = 'hRlpZCPLF1gyEMOQUuqRgDGoFM7znrTWElcKuk0LiNt'
+    acc_token = (os.environ['TOKEN'])
     url = 'https://notify-api.line.me/api/notify'
     headers = {'Authorization': 'Bearer ' + acc_token}
     payload = {'message': msg}
