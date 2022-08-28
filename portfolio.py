@@ -6,7 +6,6 @@ import urllib
 import re
 import requests
 
-
 # メイン処理
 def login_download():
     # Chromeを起動
@@ -18,7 +17,6 @@ def login_download():
     link_click(driver, 'menu-tab-dir2-1')
     link_click(driver, 'menu-link-mf-135062')
     html = driver.page_source
-    time.sleep(2)
     print(html)
     driver.close()
     return html
@@ -42,14 +40,15 @@ def get_data(html):
     # CSVファイルを作成
     with open("ku_info.csv", "a", encoding='utf-8') as f:
         writer = csv.writer(f, lineterminator="\n")
+        # 掲示板から取得したデータのループ
         for row in rows:
             csvRow = []
             url = row.get("href")
             # URLを取得する
             load_url = "https://webstation.kanagawa-u.ac.jp/campusweb/"
             link_url = urllib.parse.urljoin(load_url, url)
-            # csvRowに絶対URLがなかった時にURLと文字列を追加してLINEに送信する
             flag = False
+            # CSV内のループ
             for element in written_data:
                 # flowExecutionKeyがあるとCSVファイル内のURLと再度掲示板から取得したURLとの比較が出来ないためflowExecutionKeyを省く
                 replaced_element1 = re.sub("_flowExecutionKey=.*?&", "", element[1])
@@ -97,6 +96,7 @@ def try_login(driver):
 # ラベルを指定してリンクを検索しクリックする
 def link_click(driver, label):
     a = driver.find_element_by_id(label)
+    # ボタンが押せる位置まで画面をスクロールする
     driver.execute_script("arguments[0].scrollIntoView(true);", a)
     a.click()     
 
