@@ -31,3 +31,19 @@
 
 ## 矢印５
 5.1 CSVに新しく追加したデータをLINEに転送する。
+
+# 使用技術
+## 使用したモジュール
+・selenium
+・os
+・time
+・bs4
+・csv
+・urllib
+・re
+・requests
+## 使用した環境
+Python 3.9.5
+Visual Studio 
+
+
