@@ -9,7 +9,7 @@
 
 そこで、大学生に馴染みのあるLINEに大学からの新しい情報を送信することでこの問題を解決し、大学からの新しい情報の見逃し等を最小限に抑えることができます。
 # システム構成
-![ダイアグラム](system_structure.png)
+<img width="551" alt="system_structure" src="https://user-images.githubusercontent.com/111495470/220122995-132bc2dd-dcad-4ba0-a049-e96bcb64f216.png">
 ## 矢印１
 1.1　サイトにアクセス
 
